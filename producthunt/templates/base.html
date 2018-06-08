@@ -10,12 +10,12 @@
     <meta name="author" content="">
 
 
-    <title>Mahesh Ghatti</title>
+    <title>Product Hunt</title>
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
     <!-- Custom styles for this template -->
-
+    <link rel="stylesheet" href="{% static 'open-iconic/font/css/open-iconic.css' %}">
   </head>
 
   <body>
@@ -25,7 +25,7 @@
         <div class="container">
 
 
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="{% url 'home' %}">
         <img src="{% static 'logo.png'%}" height=40 width=40 class="d-inline-block alighn-top"/>
         Product Hunt
         </a>
@@ -34,12 +34,17 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav ml-auto">
-            <a class="nav-item nav-link" href="{% url 'signup' %}">Sign Up</a>
+
             {% if user.is_authenticated %}
-            <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
+            <a class="nav-item nav-link" href="{% url 'create' %}"><span class="oi" data-glyph="icon-name" title="icon name" aria-hidden="true">Create</span></a>
+            <a class="nav-item nav-link" href="javascript:{document.getElementById('logout').submit()}" onclick="">Logout</a>
+            <form id='logout' action="{% url 'logout' %}" method="post">
+              {% csrf_token %}
+              <input type="hidden">
 
+            </form>
             {% else %}
-
+            <a class="nav-item nav-link" href="{% url 'signup' %}">Sign Up</a>
             <a class="nav-item nav-link" href="{% url 'login' %}">Login</a>
             {% endif %}
           </div>

@@ -29,8 +29,9 @@ def login(request):
             return render(request,'accounts/login.html',{'error':'username or password is incorrect'})
     return render(request,'accounts/login.html')
 
-@login_required
-def logout(request):
-    if request.method=="POST":
+
+def user_logout(request):
+    if request.method == 'POST':
+
         auth.logout(request)
-        return HttpResponseRedirect(reverse('accounts/signup.html'))
+        return render(request,'accounts/signup.html')
