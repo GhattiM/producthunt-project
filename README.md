@@ -1,6 +1,6 @@
 # producthunt-project
 
-In this project I have learned about how to create, login,logout among other core functionalities in Django.The screenshots demonstrates the process of website.
+This is Producthunt clone project.In this project I have learned about how to create, login,logout among other core functionalities in Django.The screenshots demonstrates the process of website.
 
 ![producthunt1](https://user-images.githubusercontent.com/23422047/41252077-188976f6-6d8a-11e8-84b2-28dd4a937eed.JPG)
 ![producthunt2](https://user-images.githubusercontent.com/23422047/41252130-41c689a0-6d8a-11e8-8b4c-87b0388d1f3c.JPG)
